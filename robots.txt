@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://itzmehdude.online/sitemap.xml

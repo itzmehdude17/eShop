@@ -1,0 +1,42 @@
+# Enable Rewrite Engine
+RewriteEngine On
+RewriteRule ^api/ - [L]
+
+# Remove .html Extension (Internal Rewrite)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+# Redirect .html to non-.html (canonical)
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html\s [NC]
+RewriteRule ^([^.]+)\.html$ https://itzmehdude.online/$1 [R=301,L]
+
+# Security Headers (Safe)
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Protect Critical Files
+<FilesMatch "^(\.htaccess|\.env|composer\.json|package\.json)">
+Require all denied
+</FilesMatch>
+
+# Protect Assets Folder from Hotlinking
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/assets/ [NC]
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?itzmehdude\.online/ [NC]
+RewriteRule \.(jpg|jpeg|png|gif|css|js)$ - [F,NC,L]
+</IfModule>
+
+# Extra protection for sensitive files inside assets (optional)
+<FilesMatch "\.(env|json|php)$">
+Require all denied
+</FilesMatch>
+
+# Custom Error Pages
+ErrorDocument 401 /401.html
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html

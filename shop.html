@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Shop | itzmehdude.online</title>
+    <meta name="description" content="Browse all game top-ups and AI subscriptions at itzmehdude. PUBG Mobile, Delta Force, ChatGPT, Claude and more."/>
+    
+    <!-- Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- CSS Stack (in order: variables → global → layout → shop) -->
+    <link rel="stylesheet" href="./assets/css/variables.css"/>
+    <link rel="stylesheet" href="./assets/css/global.css"/>
+    <link rel="stylesheet" href="./assets/css/layout.css"/>
+    <link rel="stylesheet" href="./assets/css/pages/shop.css"/>
+  </head>
+  <body id="top">
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announce-bar">
+      <span class="en">Fast delivery · Trusted seller · 24/7 WhatsApp Support</span>
+      <span class="bn">দ্রুত ডেলিভারি · নির্ভরযোগ্য বিক্রেতা · ২৪/৭ WhatsApp সাপোর্ট</span>
+    </div>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="index.html" class="logo">itzmehdude<em>.online</em></a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav" id="mobile-nav">
+          <a href="index.html" class="en">Home</a><a href="index.html" class="bn">হোম</a>
+          <a href="shop.html" class="en">Shop</a><a href="shop.html" class="bn">শপ</a>
+          <a href="contact.html" class="en">Contact</a><a href="contact.html" class="bn">যোগাযোগ</a>
+        </nav>
+        <div class="topbar-actions">
+          <div class="lang-toggle">
+            <button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+            <button onclick="setLang('bn')" id="btn-bn">বাং</button>
+          </div>
+
+          <button class="cart-btn" onclick="toggleCart()">
+            🛒 <span class="en">Cart</span><span class="bn">কার্ট</span>
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header-glow"></div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html" class="en">Home</a>
+          <a href="index.html" class="bn">হোম</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="en">Shop</span>
+          <span class="bn">শপ</span>
+        </div>
+        <h1 class="en">Browse the Shop</h1>
+        <h1 class="bn">শপ ব্রাউজ করুন</h1>
+        <p class="en">All game top-ups and subscriptions in one place. Safe, fast, and fairly priced.</p>
+        <p class="bn">সব গেম টপ আপ এবং সাবস্ক্রিপশন এক জায়গায়। নিরাপদ, দ্রুত এবং ন্যায্য মূল্যে।</p>
+      </div>
+    </div>
+
+    <!-- SHOP LAYOUT -->
+    <div class="container">
+      <div class="shop-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="shop-sidebar">
+          <!-- Category Filter -->
+          <div class="filter-box">
+            <div class="filter-title en">Category</div>
+            <div class="filter-title bn">ক্যাটাগরি</div>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="radio" name="cat" value="all" checked />
+                <span class="filter-option-label en">All Products</span>
+                <span class="filter-option-label bn">সব পণ্য</span>
+                <span class="filter-option-count">21</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="cat" value="game" />
+                <span class="filter-option-label en">Games</span>
+                <span class="filter-option-label bn">গেমস</span>
+                <span class="filter-option-count">10</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="cat" value="subscription" />
+                <span class="filter-option-label en">Subscriptions</span>
+                <span class="filter-option-label bn">সাবস্ক্রিপশন</span>
+                <span class="filter-option-count">11</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Game Filter -->
+          <div class="filter-box">
+            <div class="filter-title en">Game</div>
+            <div class="filter-title bn">গেম</div>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="radio" name="game" value="all" checked />
+                <span class="filter-option-label en">All Games</span>
+                <span class="filter-option-label bn">সব গেম</span>
+              </label>
+              <div class="filter-divider"></div>
+              <label class="filter-option">
+                <input type="radio" name="game" value="pubgm" />
+                <span class="filter-option-label">PUBG Mobile</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="game" value="delta" />
+                <span class="filter-option-label">Delta Force</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="game" value="arena" />
+                <span class="filter-option-label">Arena Breakout</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="game" value="cod" />
+                <span class="filter-option-label">Call of Duty</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="game" value="wwm" />
+                <span class="filter-option-label">Where Winds Meet</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Price Filter -->
+          <div class="filter-box">
+            <div class="filter-title en">Price Range</div>
+            <div class="filter-title bn">মূল্যসীমা</div>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="radio" name="price" value="all" checked />
+                <span class="filter-option-label en">All Prices</span>
+                <span class="filter-option-label bn">সব মূল্য</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="low" />
+                <span class="filter-option-label en">Under ৳500</span>
+                <span class="filter-option-label bn">৳৫০০ এর নিচে</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="mid" />
+                <span class="filter-option-label en">৳500 - ৳2,000</span>
+                <span class="filter-option-label bn">৳৫০০ - ৳২,০০০</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price" value="high" />
+                <span class="filter-option-label en">Above ৳2,000</span>
+                <span class="filter-option-label bn">৳২,০০০ এর উপরে</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Help Box -->
+          <a href="contact.html" style="display:block;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-align:center;text-decoration:none;transition:all var(--transition);" class="help-box">
+            <div style="font-size:1.8rem;margin-bottom:8px;">💬</div>
+            <div style="font-weight:700;font-size:.92rem;margin-bottom:6px;" class="en">Need Help?</div>
+            <div style="font-weight:700;font-size:.92rem;margin-bottom:6px;" class="bn">সাহায্য দরকার?</div>
+            <div style="font-size:.8rem;color:var(--text2);" class="en">Contact us on WhatsApp</div>
+            <div style="font-size:.8rem;color:var(--text2);" class="bn">WhatsApp-এ যোগাযোগ করুন</div>
+          </a>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main>
+          <!-- Section Tabs -->
+          <div class="section-tabs">
+            <button class="section-tab active" id="tab-games" data-section="games">
+              <span class="en">🎮 Games</span>
+              <span class="bn">🎮 গেমস</span>
+            </button>
+            <button class="section-tab" id="tab-subs" data-section="subscriptions">
+              <span class="en">📱 Subscriptions</span>
+              <span class="bn">📱 সাবস্ক্রিপশন</span>
+            </button>
+          </div>
+
+          <!-- Note Box -->
+          <div class="note-box">
+            <strong class="en">How to order:</strong>
+            <strong class="bn">কীভাবে অর্ডার করবেন:</strong>
+            <span class="en"> Add items to cart, fill the order form with your Game UID or account details. Orders are processed manually - average delivery within 15 minutes during active hours.</span>
+            <span class="bn"> কার্টে আইটেম যোগ করুন, আপনার Game UID বা অ্যাকাউন্ট তথ্য দিয়ে অর্ডার ফর্ম পূরণ করুন। অর্ডার ম্যানুয়ালি প্রক্রিয়া করা হয় - সক্রিয় সময়ে গড়ে ১৫ মিনিটের মধ্যে ডেলিভারি।</span>
+          </div>
+
+          <!-- Toolbar -->
+          <div class="shop-toolbar">
+            <div class="shop-count en">Showing <strong id="product-count-en">21</strong> products</div>
+            <div class="shop-count bn"><strong id="product-count-bn">২১</strong>টি পণ্য দেখানো হচ্ছে</div>
+            <select class="sort-select" id="sort-select">
+              <option value="default">Sort: Default</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+
+          <!-- GAMES SECTION -->
+          <div id="games">
+            <div class="shop-section-heading">
+              <span class="section-icon">🎮</span>
+              <h2 class="en">Games</h2>
+              <h2 class="bn">গেমস</h2>
+            </div>
+
+            <div class="product-grid" id="games-grid">
+              <!-- PUBG Mobile Products -->
+              <div class="product-card" data-category="game" data-game="pubgm" data-price="205">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background-image: url('./assets/img/pubg-icon.png')"></div>
+                  <span class="product-thumb-icon">🔫</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">PUBG Mobile</div>
+                  <div class="product-name en">60 UC</div>
+                  <div class="product-name bn">৬০ UC</div>
+                  <div class="product-desc en">60 UC added directly to your account via Player ID. Instant delivery.</div>
+                  <div class="product-desc bn">Player ID দিয়ে সরাসরি অ্যাকাউন্টে যোগ হবে। দ্রুত ডেলিভারি।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳205 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="60 UC" data-game="PUBG Mobile" data-price="205" data-icon="🔫">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="game" data-game="pubgm" data-price="590">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background-image: url('./assets/img/pubg-icon.png')"></div>
+                  <span class="product-thumb-icon">🔫</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">PUBG Mobile</div>
+                  <div class="product-name en">325 UC</div>
+                  <div class="product-name bn">৩২৫ UC</div>
+                  <div class="product-desc en">300 UC + 25 bonus UC. Good for outfit upgrades or a few crate opens.</div>
+                  <div class="product-desc bn">৩০০ UC + ২৫ বোনাস UC। আউটফিট বা ক্রেট খোলার জন্য ভালো প্যাক।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳590 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="325 UC" data-game="PUBG Mobile" data-price="590" data-icon="🔫">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="game" data-game="pubgm" data-price="1320">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background-image: url('./assets/img/pubg-icon.png')"></div>
+                  <span class="product-thumb-icon">🔫</span>
+                  <span class="product-badge badge-hot">HOT</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">PUBG Mobile</div>
+                  <div class="product-name en">660 UC</div>
+                  <div class="product-name bn">৬৬০ UC</div>
+                  <div class="product-desc en">600 UC + 60 bonus UC. Best value for Royal Pass or outfit purchases.</div>
+                  <div class="product-desc bn">৬০০ UC + ৬০ বোনাস UC। Royal Pass বা আউটফিট কেনার জন্য সেরা ভ্যালু।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳1,320 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="660 UC" data-game="PUBG Mobile" data-price="1320" data-icon="🔫">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="game" data-game="pubgm" data-price="3300">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background-image: url('./assets/img/pubg-icon.png')"></div>
+                  <span class="product-thumb-icon">💣</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">PUBG Mobile</div>
+                  <div class="product-name en">1800 UC</div>
+                  <div class="product-name bn">১৮০০ UC</div>
+                  <div class="product-desc en">1500 UC + 300 bonus UC. Enough to buy Royal Pass and still have UC left.</div>
+                  <div class="product-desc bn">১৫০০ UC + ৩০০ বোনাস UC। Royal Pass কেনার পরেও UC বাকি থাকবে।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳3,300 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="1800 UC" data-game="PUBG Mobile" data-price="3300" data-icon="💣">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="game" data-game="pubgm" data-price="6600">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background-image: url('./assets/img/pubg-icon.png')"></div>
+                  <span class="product-thumb-icon">💥</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">PUBG Mobile</div>
+                  <div class="product-name en">3850 UC</div>
+                  <div class="product-name bn">৩৮৫০ UC</div>
+                  <div class="product-desc en">3500 UC + 350 bonus UC. Stock up for multiple seasons of Royal Pass and crates.</div>
+                  <div class="product-desc bn">৩৫০০ UC + ৩৫০ বোনাস UC। একাধিক সিজনের Royal Pass ও ক্রেটের জন্য যথেষ্ট।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳6,600 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="3850 UC" data-game="PUBG Mobile" data-price="6600" data-icon="💥">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="game" data-game="pubgm" data-price="13200">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background-image: url('./assets/img/pubg-icon.png')"></div>
+                  <span class="product-thumb-icon">👑</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">PUBG Mobile</div>
+                  <div class="product-name en">8100 UC</div>
+                  <div class="product-name bn">৮১০০ UC</div>
+                  <div class="product-desc en">7000 UC + 1100 bonus UC. Highest pack available. Message us before placing this order.</div>
+                  <div class="product-desc bn">৭০০০ UC + ১১০০ বোনাস UC। সর্বোচ্চ প্যাক। অর্ডার দেওয়ার আগে আমাদের মেসেজ করুন।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳13,200 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="8100 UC" data-game="PUBG Mobile" data-price="13200" data-icon="👑">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OTHER GAMES (Coming Soon) -->
+              <div class="product-card" data-category="game" data-game="delta" data-price="0">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0a1520,#0d1c2a)"></div>
+                  <span class="product-thumb-icon">🌊</span>
+                  <span class="product-badge badge-new">NEW</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">Delta Force</div>
+                  <div class="product-name en">DF Points - Coming Soon</div>
+                  <div class="product-name bn">DF পয়েন্ট - শীঘ্রই</div>
+                  <div class="product-desc en">DF Points top-up via UID. Pricing to be confirmed. Contact us to register interest.</div>
+                  <div class="product-desc bn">UID দিয়ে DF Points টপ-আপ। মূল্য নিশ্চিত হচ্ছে। আগ্রহ থাকলে যোগাযোগ করুন।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳--- <span>BDT</span></div>
+                    <a href="contact.html" class="product-add-ask">Ask Us</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="game" data-game="arena" data-price="0">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#1a0f0a,#2a1a0d)"></div>
+                  <span class="product-thumb-icon">🪖</span>
+                  <span class="product-badge badge-new">NEW</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">Arena Breakout</div>
+                  <div class="product-name en">Bonds - Coming Soon</div>
+                  <div class="product-name bn">Bonds - শীঘ্রই</div>
+                  <div class="product-desc en">Arena Breakout Bonds via UID. Listing soon. Contact us for early enquiries.</div>
+                  <div class="product-desc bn">UID দিয়ে Arena Breakout Bonds। শীঘ্রই আসছে। আগ্রহ থাকলে যোগাযোগ করুন।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳--- <span>BDT</span></div>
+                    <a href="contact.html" class="product-add-ask">Ask Us</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="game" data-game="cod" data-price="0">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0f0f0f,#1a1a0a)"></div>
+                  <span class="product-thumb-icon">🎯</span>
+                  <span class="product-badge badge-new">NEW</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">Call of Duty</div>
+                  <div class="product-name en">COD Points - Coming Soon</div>
+                  <div class="product-name bn">COD Points - শীঘ্রই</div>
+                  <div class="product-desc en">COD Mobile points top-up via UID. Available soon. Contact us to get notified.</div>
+                  <div class="product-desc bn">UID দিয়ে COD Mobile পয়েন্ট টপ-আপ। শীঘ্রই আসছে। নোটিফিকেশনের জন্য যোগাযোগ করুন।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳--- <span>BDT</span></div>
+                    <a href="contact.html" class="product-add-ask">Ask Us</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="game" data-game="wwm" data-price="0">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0a1520,#102030)"></div>
+                  <span class="product-thumb-icon">🌸</span>
+                  <span class="product-badge badge-new">NEW</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">Where Winds Meet</div>
+                  <div class="product-name en">Top-Up - Coming Soon</div>
+                  <div class="product-name bn">টপ আপ - শীঘ্রই</div>
+                  <div class="product-desc en">In-game currency top-up via UID. Prices listing soon. Contact us to enquire.</div>
+                  <div class="product-desc bn">UID দিয়ে ইন-গেম কারেন্সি টপ-আপ। শীঘ্রই মূল্য তালিকা। জানতে যোগাযোগ করুন।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳--- <span>BDT</span></div>
+                    <a href="contact.html" class="product-add-ask">Ask Us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shop-section-sep"></div>
+
+          <!-- SUBSCRIPTIONS SECTION -->
+          <div id="subscriptions">
+            <div class="shop-section-heading">
+              <span class="section-icon">📱</span>
+              <h2 class="en">Subscriptions</h2>
+              <h2 class="bn">সাবস্ক্রিপশন</h2>
+            </div>
+
+            <div class="note-box">
+              <strong>Note:</strong>
+              <span class="en"> All prices include platform tax (~15%). No debit or credit card needed from your side.</span>
+              <span class="bn"> সকল মূল্যে প্ল্যাটফর্ম ট্যাক্স (~১৫%) অন্তর্ভুক্ত। আপনার কোনো ডেবিট বা ক্রেডিট কার্ড লাগবে না।</span>
+            </div>
+
+            <div class="product-grid" id="subs-grid">
+              <div class="product-card" data-category="subscription" data-game="all" data-price="339">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0a1a0a,#0d1f0d)"></div>
+                  <span class="product-thumb-icon">▶️</span>
+                  <span class="product-badge badge-hot">HOT</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">YouTube</div>
+                  <div class="product-name en">YouTube Premium - 1 Month</div>
+                  <div class="product-name bn">YouTube Premium - ১ মাস</div>
+                  <div class="product-desc en">No ads, background play, offline downloads, and YouTube Music included. Direct BDT pricing, no card needed.</div>
+                  <div class="product-desc bn">বিজ্ঞাপন নেই, ব্যাকগ্রাউন্ড প্লে, অফলাইন ডাউনলোড এবং YouTube Music সহ। কোনো কার্ড লাগবে না।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳339 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="YouTube Premium 1 Month" data-game="YouTube" data-price="339" data-icon="▶️">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="600">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0a0a1a,#0d0d2a)"></div>
+                  <span class="product-thumb-icon">💫</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">Google</div>
+                  <div class="product-name en">Google AI Plus - 1 Month</div>
+                  <div class="product-name bn">Google AI Plus - ১ মাস</div>
+                  <div class="product-desc en">Access to Gemini Advanced and AI-powered features across Google apps. Good for students and daily users.</div>
+                  <div class="product-desc bn">Google অ্যাপজুড়ে Gemini Advanced এবং AI ফিচার। শিক্ষার্থী ও দৈনন্দিন ব্যবহারকারীদের জন্য উপযুক্ত।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳600 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="Google AI Plus 1 Month" data-game="Google" data-price="600" data-icon="💫">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="950">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0d1a10,#0f2015)"></div>
+                  <span class="product-thumb-icon">🤖</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">OpenAI</div>
+                  <div class="product-name en">ChatGPT Go - 1 Month</div>
+                  <div class="product-name bn">ChatGPT Go - ১ মাস</div>
+                  <div class="product-desc en">Entry-level ChatGPT plan. Limited GPT-4o access with basic usage cap. Good for light daily use.</div>
+                  <div class="product-desc bn">ChatGPT-র এন্ট্রি প্ল্যান। সীমিত GPT-4o অ্যাক্সেস। হালকা দৈনন্দিন ব্যবহারের জন্য ঠিক আছে।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳950 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="ChatGPT Go 1 Month" data-game="OpenAI" data-price="950" data-icon="🤖">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="1200">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0a0a2a,#0d0d3a)"></div>
+                  <span class="product-thumb-icon">👨‍💻</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">GitHub</div>
+                  <div class="product-name en">GitHub Copilot Pro - 1 Month</div>
+                  <div class="product-name bn">GitHub Copilot Pro - ১ মাস</div>
+                  <div class="product-desc en">AI code completion, inline suggestions, and chat in your IDE. Works with VS Code, JetBrains, and more.</div>
+                  <div class="product-desc bn">IDE-তে AI কোড কমপ্লিশন, ইনলাইন সাজেশন এবং চ্যাট। VS Code, JetBrains-সহ অনেক টুলে কাজ করে।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳1,200 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="GitHub Copilot Pro 1 Month" data-game="GitHub" data-price="1200" data-icon="👨‍💻">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="1019">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#1a0a0d,#2a0d10)"></div>
+                  <span class="product-thumb-icon">📊</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">Microsoft</div>
+                  <div class="product-name en">Microsoft 365 Personal - 1 Month</div>
+                  <div class="product-name bn">Microsoft 365 Personal - ১ মাস</div>
+                  <div class="product-desc en">Full Word, Excel, PowerPoint, and 1TB OneDrive. Activate on 1 device. Best for students and professionals.</div>
+                  <div class="product-desc bn">সম্পূর্ণ Word, Excel, PowerPoint এবং ১TB OneDrive। ১টি ডিভাইসে অ্যাক্টিভ করুন। শিক্ষার্থী ও পেশাদারদের জন্য উপযুক্ত।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳1,019 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="Microsoft 365 Personal 1 Month" data-game="Microsoft" data-price="1019" data-icon="📊">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="2499">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#1a0d0a,#2a1510)"></div>
+                  <span class="product-thumb-icon">⚙️</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">Microsoft</div>
+                  <div class="product-name en">Microsoft 365 Premium For AI - 1 Month</div>
+                  <div class="product-name bn">Microsoft 365 Premium For AI - ১ মাস</div>
+                  <div class="product-desc en">Microsoft 365 with Copilot AI built in. AI writing, summarizing, and automation across Word, Excel, and Teams.</div>
+                  <div class="product-desc bn">Copilot AI সহ Microsoft 365। Word, Excel ও Teams-এ AI লেখা, সারসংক্ষেপ এবং অটোমেশন।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳2,499 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="Microsoft 365 Premium For AI 1 Month" data-game="Microsoft" data-price="2499" data-icon="⚙️">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="2500">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0a1a0a,#0d2a0d)"></div>
+                  <span class="product-thumb-icon">👨‍💻</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">GitHub</div>
+                  <div class="product-name en">GitHub Copilot Pro Plus - 1 Month</div>
+                  <div class="product-name bn">GitHub Copilot Pro Plus - ১ মাস</div>
+                  <div class="product-desc en">Higher usage limits, multi-file context, and access to more AI models. Best for developers working on larger projects.</div>
+                  <div class="product-desc bn">বেশি ব্যবহার সীমা, মাল্টি-ফাইল কনটেক্সট এবং আরও AI মডেল অ্যাক্সেস। বড় প্রজেক্টে কাজ করা ডেভেলপারদের জন্য সেরা।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳2,500 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="GitHub Copilot Pro+ 1 Month" data-game="GitHub" data-price="2500" data-icon="👨‍💻">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="2500">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0a1a0a,#0d2a0d)"></div>
+                  <span class="product-thumb-icon">⭐</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">Google</div>
+                  <div class="product-name en">Google AI Pro - 1 Month</div>
+                  <div class="product-name bn">Google AI Pro - ১ মাস</div>
+                  <div class="product-desc en">Full Gemini 1.5 Pro access, 2TB storage, and priority AI features across all Google apps.</div>
+                  <div class="product-desc bn">সম্পূর্ণ Gemini 1.5 Pro অ্যাক্সেস, ২TB স্টোরেজ এবং সমস্ত Google অ্যাপে প্রায়োরিটি AI ফিচার।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳2,500 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="Google AI Pro 1 Month" data-game="Google" data-price="2500" data-icon="⭐">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="3600">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0d1a10,#0f2015)"></div>
+                  <span class="product-thumb-icon">🤖</span>
+                  <span class="product-badge badge-hot">HOT</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">OpenAI</div>
+                  <div class="product-name en">ChatGPT Plus - 1 Month</div>
+                  <div class="product-name bn">ChatGPT Plus - ১ মাস</div>
+                  <div class="product-desc en">Full GPT-4o access, DALL-E image generation, Advanced Data Analysis, and priority speed. Best all-round AI plan.</div>
+                  <div class="product-desc bn">সম্পূর্ণ GPT-4o, DALL-E ইমেজ জেনারেশন, অ্যাডভান্সড ডেটা অ্যানালাইসিস এবং প্রায়োরিটি স্পিড। সেরা অলরাউন্ড AI প্ল্যান।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳3,600 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="ChatGPT Plus 1 Month" data-game="OpenAI" data-price="3600" data-icon="🤖">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="3600">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#1a0a10,#200d15)"></div>
+                  <span class="product-thumb-icon">🧠</span>
+                  <span class="product-badge badge-est">EST.</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">Anthropic</div>
+                  <div class="product-name en">Claude Pro - 1 Month</div>
+                  <div class="product-name bn">Claude Pro - ১ মাস</div>
+                  <div class="product-desc en">Full Claude Pro access with higher usage limits and priority response. Price estimated at $20 base + tax - confirmed before payment.</div>
+                  <div class="product-desc bn">বেশি ব্যবহার সীমা ও প্রায়োরিটি রেসপন্সসহ সম্পূর্ণ Claude Pro অ্যাক্সেস। আনুমানিক মূল্য - পেমেন্টের আগে নিশ্চিত করা হবে।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳3,600 <span>est.</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="Claude Pro 1 Month" data-game="Anthropic" data-price="3600" data-icon="🧠">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="4900">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0f0f1a,#15152a)"></div>
+                  <span class="product-thumb-icon">⚡</span>
+                  <span class="product-badge badge-new">NEW</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">xAI</div>
+                  <div class="product-name en">Grok Super - 1 Month</div>
+                  <div class="product-name bn">Grok Super - ১ মাস</div>
+                  <div class="product-desc en">Full Grok access with real-time X (Twitter) data, higher rate limits, and early feature access.</div>
+                  <div class="product-desc bn">রিয়েল-টাইম X (Twitter) ডেটা, বেশি রেট লিমিট এবং আর্লি ফিচার অ্যাক্সেস সহ সম্পূর্ণ Grok অ্যাক্সেস।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳4,900 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="Grok Super 1 Month" data-game="xAI" data-price="4900" data-icon="⚡">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="15700">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#1a0a10,#200d15)"></div>
+                  <span class="product-thumb-icon">🧠</span>
+                  <span class="product-badge badge-est">EST.</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">Anthropic</div>
+                  <div class="product-name en">Claude Max - 1 Month</div>
+                  <div class="product-name bn">Claude Max - ১ মাস</div>
+                  <div class="product-desc en">Maximum Claude usage with highest rate limits and extended context. Price estimated at $100 base + tax - confirmed before payment.</div>
+                  <div class="product-desc bn">সর্বোচ্চ রেট লিমিট ও এক্সটেন্ডেড কনটেক্সট সহ সর্বোচ্চ Claude ব্যবহার। আনুমানিক মূল্য - পেমেন্টের আগে নিশ্চিত করা হবে।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳15,700 <span>est.</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="Claude Max 1 Month" data-game="Anthropic" data-price="15700" data-icon="🧠">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="30700">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#0d1a10,#0f2015)"></div>
+                  <span class="product-thumb-icon">🚀</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">OpenAI</div>
+                  <div class="product-name en">ChatGPT Pro - 1 Month</div>
+                  <div class="product-name bn">ChatGPT Pro - ১ মাস</div>
+                  <div class="product-desc en">$200 plan. Unlimited GPT-4o, full o1 pro mode, and maximum compute priority. Message us before ordering this one.</div>
+                  <div class="product-desc bn">সীমাহীন GPT-4o, সম্পূর্ণ o1 pro mode এবং সর্বোচ্চ কম্পিউট প্রায়োরিটি। অর্ডার দেওয়ার আগে আমাদের মেসেজ করুন।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳30,700 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="ChatGPT Pro 1 Month" data-game="OpenAI" data-price="30700" data-icon="🚀">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card" data-category="subscription" data-game="all" data-price="31000">
+                <div class="product-thumb">
+                  <div class="product-thumb-bg" style="background:linear-gradient(135deg,#1a1a0a,#2a2a0d)"></div>
+                  <span class="product-thumb-icon">💎</span>
+                </div>
+                <div class="product-body">
+                  <div class="product-game">Google</div>
+                  <div class="product-name en">Google AI Ultra - 1 Month</div>
+                  <div class="product-name bn">Google AI Ultra - ১ মাস</div>
+                  <div class="product-desc en">Google's top-tier plan. Maximum Gemini 2.0 access, 30TB storage, and all premium AI features across Google One.</div>
+                  <div class="product-desc bn">Google-এর সর্বোচ্চ প্ল্যান। সর্বোচ্চ Gemini 2.0 অ্যাক্সেস, ৩০TB স্টোরেজ এবং Google One-এর সমস্ত প্রিমিয়াম AI ফিচার।</div>
+                  <div class="product-footer">
+                    <div class="product-price">৳31,000 <span>BDT</span></div>
+                    <button class="product-add" data-action="addToCart" data-name="Google AI Ultra 1 Month" data-game="Google" data-price="31000" data-icon="💎">+</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </main>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">itzmehdude<em>.online</em></a>
+            <p class="en">Bangladesh's most trusted gaming eShop. Safe, fast, and fair gaming top-ups and subscriptions.</p>
+            <p class="bn">বাংলাদেশের সবচেয়ে বিশ্বস্ত গেমিং ইশপ। নিরাপদ, দ্রুত এবং ন্যায্য গেমিং টপ-আপ ও সাবস্ক্রিপশন।</p>
+            <div class="footer-social">
+              <a href="https://facebook.com/itzmehdude" target="_blank" rel="noopener" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://api.whatsapp.com/send/?phone=8801575694241&text=Assalamualaikum+brother" target="_blank" rel="noopener" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="en">Quick Links</h4>
+            <h4 class="bn">দ্রুত লিংক</h4>
+            <div class="footer-links">
+              <a href="index.html" class="en">Home</a>
+              <a href="index.html" class="bn">হোম</a>
+              <a href="shop.html" class="en">Shop</a>
+              <a href="shop.html" class="bn">শপ</a>
+              <a href="contact.html" class="en">Contact</a>
+              <a href="contact.html" class="bn">যোগাযোগ</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="en">Support</h4>
+            <h4 class="bn">সাপোর্ট</h4>
+            <div class="footer-links">
+              <a href="contact.html" class="en">WhatsApp</a>
+              <a href="contact.html" class="bn">হোয়াটসঅ্যাপ</a>
+              <a href="contact.html" class="en">Facebook</a>
+              <a href="contact.html" class="bn">ফেসবুক</a>
+              <a href="#" class="en">Refund Policy</a>
+              <a href="#" class="bn">রিফান্ড নীতি</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="en">&copy; 2026 itzmehdude.online · All rights reserved.</span>
+          <span class="bn">&copy; ২০২৬ itzmehdude.online · সর্বস্বত্ব সংরক্ষিত।</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <div class="float-btns">
+      <a href="https://api.whatsapp.com/send/?phone=8801575694241&text=Assalamualaikum+brother" target="_blank" rel="noopener" class="float-btn float-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://facebook.com/itzmehdude" target="_blank" rel="noopener" class="float-btn float-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <!-- back to top button -->
+      <a href="#top" class="float-btn float-bt"><ion-icon name="triangle"></ion-icon></a>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-head">
+        <h3 class="en">Your Cart</h3>
+        <h3 class="bn">আপনার কার্ট</h3>
+        <button class="cart-close" id="cart-close-btn" data-action="toggleCart">✕</button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-foot">
+        <div class="cart-total">
+          <span class="en">Total</span>
+          <span class="bn">মোট</span>
+          <span class="cart-total-num" id="cart-total">৳0</span>
+        </div>
+        <button class="cart-checkout" id="checkout-btn" data-action="proceedCheckout">
+          <span class="en">Proceed to Order &#8594;</span>
+          <span class="bn">অর্ডারে যান &#8594;</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="./assets/js/shared.js"></script>
+    <script src="./assets/js/pages/shop.js"></script>
+
+    <!-- EVENT DELEGATION FOR DATA ATTRIBUTES -->
+    <script>
+    document.addEventListener('click', (e) => {
+      const action = e.target.closest('[data-action]');
+      if (!action) return;
+      
+      const actionType = action.dataset.action;
+      
+      switch(actionType) {
+        case 'setLang':
+          setLang(action.dataset.value);
+          break;
+        case 'setTheme':
+          setTheme(action.dataset.value);
+          break;
+        case 'toggleCart':
+          toggleCart();
+          break;
+        case 'addToCart':
+          addToCart(
+            action.dataset.name,
+            action.dataset.game,
+            parseInt(action.dataset.price),
+            action.dataset.icon
+          );
+          break;
+        case 'proceedCheckout':
+          proceedCheckout();
+          break;
+      }
+    });
+
+    // Tab scrolling with data attributes
+    document.querySelectorAll('[data-section]').forEach(tab => {
+      tab.addEventListener('click', () => {
+        scrollToSection(tab.dataset.section);
+      });
+    });
+    </script>
+
+  </body>
+</html>

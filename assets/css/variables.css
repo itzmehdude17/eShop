@@ -1,0 +1,41 @@
+/* ── DESIGN SYSTEM VARIABLES ── */
+:root {
+  /* Colors */
+  --accent: #00e5ff;
+  --accent2: #ff6b35;
+  --bg: #0a0c10;
+  --bg2: #111318;
+  --bg3: #181c24;
+  --card: #13161e;
+  --border: rgba(0, 229, 255, 0.12);
+  --text: #e8eaf0;
+  --text2: #8b909e;
+  --text3: #555c6e;
+  
+  /* Shadows */
+  --shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+  
+  /* Spacing */
+  --radius: 12px;
+  --radius-sm: 8px;
+  
+  /* Typography */
+  --font-en: 'Rajdhani', sans-serif;
+  --font-bn: 'Noto Sans Bengali', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Animations */
+  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] {
+  --bg: #f0f2f7;
+  --bg2: #e4e7ef;
+  --bg3: #d8dce8;
+  --card: #ffffff;
+  --border: rgba(0, 100, 180, 0.13);
+  --text: #111520;
+  --text2: #4a5068;
+  --text3: #9099b0;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}

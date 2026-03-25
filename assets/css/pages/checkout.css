@@ -1,0 +1,574 @@
+/* CHECKOUT PAGE STYLES */
+
+/* ── ORDER LAYOUT ─────────────────────────────────────────── */
+.order-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  padding: 48px 0 80px;
+  align-items: start;
+}
+
+/* ── FORM SECTIONS ────────────────────────────────────────── */
+.form-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.form-section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-section-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+}
+
+.form-label .req {
+  color: var(--accent2);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--text);
+  font-family: var(--font-en);
+  font-size: 0.92rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--accent);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text3);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-hint {
+  font-size: 0.78rem;
+  color: var(--text3);
+}
+
+/* ── ORDER TYPE OPTIONS ───────────────────────────────────── */
+.order-type-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.order-type-option {
+  position: relative;
+}
+
+.order-type-option input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.order-type-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: center;
+  background: none;
+}
+
+.ot-icon {
+  font-size: 1.8rem;
+}
+
+.ot-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.ot-desc {
+  font-size: 0.75rem;
+  color: var(--text2);
+}
+
+.order-type-option input:checked + .order-type-label {
+  border-color: var(--accent);
+  background: rgba(0, 229, 255, 0.07);
+}
+
+.order-type-label:hover {
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+/* ── PAYMENT OPTIONS ──────────────────────────────────────── */
+.payment-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.payment-option {
+  position: relative;
+}
+
+.payment-option input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.payment-option-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 15px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: none;
+}
+
+.payment-option input:checked + .payment-option-label {
+  border-color: var(--accent);
+  background: rgba(0, 229, 255, 0.07);
+}
+
+.payment-option-label:hover {
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+.payment-option-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* ── CONDITIONAL DISPLAY ──────────────────────────────────── */
+.cond {
+  display: none;
+}
+
+.cond.on {
+  display: block;
+}
+
+/* ── NOTE BOX ──────────────────────────────────────────────── */
+.note-box {
+  background: rgba(255, 193, 7, 0.06);
+  border: 1px solid rgba(255, 193, 7, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 0.86rem;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+.note-box strong {
+  color: #ffc107;
+}
+
+/* ── SUBMIT BUTTON ────────────────────────────────────────── */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all var(--transition);
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-en);
+  margin-top: 8px;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background: #33ecff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 229, 255, 0.35);
+  outline: none;
+}
+
+/* ── ORDER SUMMARY ────────────────────────────────────────── */
+.order-summary {
+  position: sticky;
+  top: 82px;
+}
+
+.summary-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.summary-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-empty {
+  text-align: center;
+  padding: 30px 0;
+  color: var(--text2);
+  font-size: 0.9rem;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--bg3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.summary-item-name {
+  font-weight: 600;
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
+
+.summary-item-game {
+  font-size: 0.72rem;
+  color: var(--text2);
+}
+
+.summary-item-price {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.summary-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.summary-row .lbl {
+  color: var(--text2);
+  font-size: 0.9rem;
+}
+
+.summary-row .val {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.summary-row.grand .lbl {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.summary-row.grand .val {
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+/* ── TRUST CHIPS ──────────────────────────────────────────── */
+.trust-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.trust-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text2);
+}
+
+/* ── SUCCESS MODAL ────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 18px;
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.modal-sub {
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.modal-order-id-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.modal-order-id {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
+  letter-spacing: 0.08em;
+  transition: all var(--transition);
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-order-id:hover {
+  background: rgba(0, 229, 255, 0.15);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.modal-copy-btn {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 0 20px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 50px;
+  height: auto;
+}
+
+.modal-copy-btn:hover {
+  background: #33ecff;
+  transform: scale(1.05);
+}
+
+.modal-copy-btn:active {
+  transform: scale(0.95);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-btn {
+  padding: 11px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition: all var(--transition);
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-en);
+}
+
+.modal-btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.modal-btn-primary:hover {
+  background: #33ecff;
+}
+
+.modal-btn-outline {
+  border: 1.5px solid var(--border);
+  background: none;
+  color: var(--text);
+}
+
+.modal-btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .order-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary {
+    position: static;
+  }
+  
+  .payment-option-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-options {
+    grid-template-columns: 1fr;
+  }
+
+  .order-type-options {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-btn {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .modal {
+    padding: 28px 20px;
+  }
+
+  .modal-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 14px;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+  
+  .payment-option-icon {
+    width: 28px;
+    height: 28px;
+  }
+}

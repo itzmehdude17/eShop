@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact Us | itzmehdude.online</title>
+    <meta name="description" content="Contact itzmehdude support. Get help with your orders, issues, or inquiries via WhatsApp or Facebook."/>
+    
+    <!-- Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- CSS Stack (in order: variables → global → layout → contact) -->
+    <link rel="stylesheet" href="./assets/css/variables.css"/>
+    <link rel="stylesheet" href="./assets/css/global.css"/>
+    <link rel="stylesheet" href="./assets/css/layout.css"/>
+    <link rel="stylesheet" href="./assets/css/pages/contact.css"/>
+  </head>
+  <body id="top">
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announce-bar">
+      <span class="en">Fast delivery · Trusted seller · 24/7 WhatsApp Support</span>
+      <span class="bn">দ্রুত ডেলিভারি · নির্ভরযোগ্য বিক্রেতা · ২৪/৭ WhatsApp সাপোর্ট</span>
+    </div>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="index.html" class="logo">itzmehdude<em>.online</em></a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav" id="mobile-nav">
+          <a href="index.html" class="en">Home</a><a href="index.html" class="bn">হোম</a>
+          <a href="shop.html" class="en">Shop</a><a href="shop.html" class="bn">শপ</a>
+          <a href="contact.html" class="en">Contact</a><a href="contact.html" class="bn">যোগাযোগ</a>
+        </nav>
+        <div class="topbar-actions">
+          <div class="lang-toggle">
+            <button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+            <button onclick="setLang('bn')" id="btn-bn">বাং</button>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header-glow"></div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html" class="en">Home</a><a href="index.html" class="bn">হোম</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="en">Contact</span><span class="bn">যোগাযোগ</span>
+        </div>
+        <h1 class="en">Contact Us</h1><h1 class="bn">আমাদের সাথে যোগাযোগ করুন</h1>
+        <p class="en">Have questions or issues? We're here to help! Reach out via WhatsApp or Facebook.</p>
+        <p class="bn">প্রশ্ন বা সমস্যা আছে? আমরা সাহায্য করতে প্রস্তুত! WhatsApp বা Facebook এর মাধ্যমে যোগাযোগ করুন।</p>
+      </div>
+    </div>
+
+    <!-- CONTACT CONTENT -->
+    <div class="container">
+      <!-- RESPONSE TIMES -->
+      <div class="response-times">
+        <h3 class="en">⚡ Response Times</h3>
+        <h3 class="bn">⚡ প্রতিক্রিয়া সময়</h3>
+        <div class="response-item">
+          <span class="en">Active Hours (10 AM - 10 PM)</span>
+          <span class="bn">সক্রিয় ঘন্টা (সকাল ১০ - রাত ১১)</span>
+          <span class="en">Usually ≤ 10 min</span>
+          <span class="bn">সাধারণত ≤ ১০ মিনিট</span>
+        </div>
+      </div>
+
+      <!-- CONTACT METHODS -->
+      <div class="contact-methods">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/8801575694241" target="_blank" rel="noopener" class="contact-method">
+          <span class="contact-method-icon">💬</span>
+          <h3 class="en">WhatsApp</h3>
+          <h3 class="bn">WhatsApp</h3>
+          <p class="en">Fastest way to reach us. We respond within minutes during active hours.</p>
+          <p class="bn">আমাদের সাথে যোগাযোগের দ্রুততম উপায়। সক্রিয় সময়ে আমরা মিনিটের মধ্যে সাড়া দিই।</p>
+          <div class="contact-method-link">
+            <span class="en">Click to Chat →</span>
+            <span class="bn">চ্যাট করতে ক্লিক করুন →</span>
+          </div>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://facebook.com/itzmehdude" target="_blank" rel="noopener" class="contact-method">
+          <span class="contact-method-icon">📘</span>
+          <h3>Facebook</h3>
+          <p class="en">Message us on Facebook for support or inquiries.</p>
+          <p class="bn">সহায়তা বা অনুসন্ধানের জন্য Facebook এ আমাদের বার্তা পাঠান।</p>
+          <div class="contact-method-link">
+            <span class="en">Click to Chat →</span>
+            <span class="bn">চ্যাট করতে ক্লিক করুন →</span>
+          </div>
+        </a>
+
+        <!-- Email (Optional) -->
+        <a href="mailto:support@itzmehdude.online" class="contact-method">
+          <span class="contact-method-icon">📧</span>
+          <h3 class="en">Email</h3>
+          <h3 class="bn">ইমেইল</h3>
+          <p class="en">For formal inquiries or detailed issues, email us.</p>
+          <p class="bn">আনুষ্ঠানিক অনুসন্ধান বা বিস্তারিত সমস্যার জন্য আমাদের ইমেল করুন।</p>
+          <div class="contact-method-link">
+            <span class="en">Send Email →</span>
+            <span class="bn">ইমেল পাঠান →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- TRACK ORDER SECTION -->
+      <div class="track-section" id="track-order">
+        <h2 class="en">📦 Track Your Order</h2>
+        <h2 class="bn">📦 আপনার অর্ডার ট্র্যাক করুন</h2>
+        
+        <!-- Info Box -->
+        <div class="track-info-box">
+          <h3 class="en">📌 How Tracking Works</h3>
+          <h3 class="bn">📌 ট্র্যাকিং কীভাবে কাজ করে</h3>
+          <p class="en">We process all orders manually. After you submit your order and make payment, you'll receive an Order ID (format: IMD-XXXXXX). Share this ID on WhatsApp and we'll provide real-time updates on your delivery status.</p>
+          <p class="bn">আমরা সমস্ত অর্ডার ম্যানুয়ালি প্রক্রিয়া করি। আপনি আপনার অর্ডার জমা দেওয়ার এবং পেমেন্ট করার পরে, আপনি একটি অর্ডার ID পাবেন (ফর্ম্যাট: IMD-XXXXXX)। এই ID WhatsApp এ শেয়ার করুন এবং আমরা আপনার ডেলিভারি স্ট্যাটাস সম্পর্কে রিয়েল-টাইম আপডেট প্রদান করব।</p>
+        </div>
+
+        <!-- Track Options -->
+        <div class="track-options">
+          <!-- If you have Order ID -->
+          <div class="track-option">
+            <span class="track-option-icon">🔍</span>
+            <h3 class="en">Have Your Order ID?</h3>
+            <h3 class="bn">আপনার অর্ডার ID আছে?</h3>
+            <p class="en">Share it on WhatsApp along with the message "Track my order" and we'll send you instant updates.</p>
+            <p class="bn">এটি WhatsApp এ "Track my order" বার্তা সহ শেয়ার করুন এবং আমরা তাত্ক্ষণিক আপডেট পাঠাব।</p>
+            <a href="https://wa.me/8801575694241?text=Track%20my%20order%20-%20Order%20ID%3A%20" class="track-button">
+              <span class="en">💬 Track on WhatsApp</span>
+              <span class="bn">💬 WhatsApp এ ট্র্যাক করুন</span>
+            </a>
+          </div>
+
+          <!-- If you don't have Order ID -->
+          <div class="track-option">
+            <span class="track-option-icon">❓</span>
+            <h3 class="en">Missing Your Order ID?</h3>
+            <h3 class="bn">আপনার অর্ডার ID হারিয়ে গেছে?</h3>
+            <p class="en">No problem! Contact us with your email or phone number and we'll look it up for you.</p>
+            <p class="bn">কোন সমস্যা নেই! আপনার ইমেল বা ফোন নম্বর সহ আমাদের সাথে যোগাযোগ করুন এবং আমরা এটি খুঁজে বের করব।</p>
+            <a href="https://wa.me/8801575694241?text=I%20need%20help%20finding%20my%20order%20ID.%20My%20email%20is%3A%20" class="track-button">
+              <span class="en">💬 Message Us</span>
+              <span class="bn">💬 আমাদের বার্তা পাঠান</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Order Status Lifecycle -->
+        <div class="order-status-lifecycle">
+          <h3 class="en">Order Status Lifecycle</h3>
+          <h3 class="bn">অর্ডার স্ট্যাটাস জীবনচক্র</h3>
+
+          <div class="status-step">
+            <div class="status-step-number">1</div>
+            <div class="status-step-content">
+              <h4 class="en">Order Submitted</h4>
+              <h4 class="bn">অর্ডার জমা দেওয়া হয়েছে</h4>
+              <p class="en">Your order form is filled and submitted. You receive an Order ID immediately.</p>
+              <p class="bn">আপনার অর্ডার ফর্ম পূরণ করা এবং জমা দেওয়া হয়েছে। আপনি তাত্ক্ষণিক একটি অর্ডার ID পাবেন।</p>
+              <span class="status-step-time">Instant</span>
+            </div>
+          </div>
+
+          <div class="status-step">
+            <div class="status-step-number">2</div>
+            <div class="status-step-content">
+              <h4 class="en">Awaiting Payment</h4>
+              <h4 class="bn">পেমেন্টের জন্য অপেক্ষা করছে</h4>
+              <p class="en">We're waiting for you to send payment. Share your transaction ID on WhatsApp once sent.</p>
+              <p class="bn">আমরা আপনার পেমেন্টের জন্য অপেক্ষা করছি। পাঠানোর পরে WhatsApp এ আপনার ট্রানজেকশন ID শেয়ার করুন।</p>
+              <span class="status-step-time">After you submit order</span>
+            </div>
+          </div>
+
+          <div class="status-step">
+            <div class="status-step-number">3</div>
+            <div class="status-step-content">
+              <h4 class="en">Payment Confirmed</h4>
+              <h4 class="bn">পেমেন্ট নিশ্চিত করা হয়েছে</h4>
+              <p class="en">We've verified your payment. Processing your order now.</p>
+              <p class="bn">আমরা আপনার পেমেন্ট যাচাই করেছি। এখন আপনার অর্ডার প্রসেস করছি।</p>
+              <span class="status-step-time">2-5 minutes after payment</span>
+            </div>
+          </div>
+
+          <div class="status-step">
+            <div class="status-step-number">4</div>
+            <div class="status-step-content">
+              <h4 class="en">Delivered</h4>
+              <h4 class="bn">ডেলিভার করা হয়েছে</h4>
+              <p class="en">Your top-up/subscription has been successfully delivered. Check your game account or email.</p>
+              <p class="bn">আপনার টপ-আপ/সাবস্ক্রিপশন সফলভাবে ডেলিভার করা হয়েছে। আপনার গেম অ্যাকাউন্ট বা ইমেল চেক করুন।</p>
+              <span class="status-step-time">15-30 minutes (avg during active hours)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ SECTION -->
+      <div class="faq-section">
+        <h2 class="en">Common Questions</h2>
+        <h2 class="bn">সাধারণ প্রশ্ন</h2>
+
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="en">❓ How long does delivery take?</span>
+            <span class="bn">❓ ডেলিভারি কতক্ষণ লাগে?</span>
+          </div>
+          <div class="faq-answer">
+            <span class="en">Most orders are delivered within 15-30 minutes after payment confirmation. During peak hours, it may take up to 1 hour.</span>
+            <span class="bn">পেমেন্ট নিশ্চিতকরণের পরে বেশিরভাগ অর্ডার ১৫-৩০ মিনিটের মধ্যে ডেলিভার করা হয়। পিক আওয়ারে এটি ১ ঘণ্টা পর্যন্ত লাগতে পারে।</span>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="en">❓ What if I entered the wrong Player ID?</span>
+            <span class="bn">❓ যদি আমি ভুল Player ID দিয়ে থাকি?</span>
+          </div>
+          <div class="faq-answer">
+            <span class="en">Contact us immediately on WhatsApp with your Order ID. We can try to retrieve the top-up from the wrong account, but it's not always possible. Always double-check your ID before ordering.</span>
+            <span class="bn">আপনার অর্ডার ID সহ তাত্ক্ষণিকভাবে WhatsApp এ যোগাযোগ করুন। আমরা ভুল অ্যাকাউন্ট থেকে টপ-আপ পুনরুদ্ধার করার চেষ্টা করতে পারি, তবে এটি সর্বদা সম্ভব নয়। অর্ডার করার আগে সবসময় আপনার ID দুইবার চেক করুন।</span>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="en">❓ How do I track my order?</span>
+            <span class="bn">❓ আমি আমার অর্ডার ট্র্যাক করব কিভাবে?</span>
+          </div>
+          <div class="faq-answer">
+            <span class="en">Share your Order ID on WhatsApp and we'll give you a status update. We manually process all orders, so tracking is done through direct communication.</span>
+            <span class="bn">আপনার অর্ডার ID WhatsApp এ শেয়ার করুন এবং আমরা আপনাকে স্ট্যাটাস আপডেট দেব। আমরা সমস্ত অর্ডার ম্যানুয়ালি প্রক্রিয়া করি, তাই ট্র্যাকিং সরাসরি যোগাযোগের মাধ্যমে করা হয়।</span>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="en">❓ What payment methods do you accept?</span>
+            <span class="bn">❓ আপনি কী পেমেন্ট পদ্ধতি গ্রহণ করেন?</span>
+          </div>
+          <div class="faq-answer">
+            <span class="en">We accept bKash, Nagad, Upay, and Rocket. You'll receive the exact payment number after submitting your order.</span>
+            <span class="bn">আমরা bKash, Nagad, Upay এবং Rocket গ্রহণ করি। আপনার অর্ডার জমা দেওয়ার পরে আপনি সঠিক পেমেন্ট নম্বর পাবেন।</span>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="en">❓ Can I get a refund?</span>
+            <span class="bn">❓ আমি রিফান্ড পেতে পারি কি?</span>
+          </div>
+          <div class="faq-answer">
+            <span class="en">Once the top-up is delivered, refunds are not possible. If there's an issue with delivery (wrong account, for example), contact us immediately and we'll do our best to help.</span>
+            <span class="bn">একবার টপ-আপ ডেলিভার হয়ে গেলে রিফান্ড সম্ভব নয়। যদি ডেলিভারিতে কোনো সমস্যা থাকে (উদাহরণস্বরূপ ভুল অ্যাকাউন্ট), অবিলম্বে আমাদের সাথে যোগাযোগ করুন এবং আমরা সাহায্য করব।</span>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="en">❓ How do subscriptions work?</span>
+            <span class="bn">❓ সাবস্ক্রিপশন কীভাবে কাজ করে?</span>
+          </div>
+          <div class="faq-answer">
+            <span class="en">For subscriptions like YouTube Premium or ChatGPT Plus, provide your email address. After payment, we create/add the subscription to your account and contact you on WhatsApp with login details.</span>
+            <span class="bn">YouTube Premium বা ChatGPT Plus এর মতো সাবস্ক্রিপশনের জন্য আপনার ইমেল ঠিকানা প্রদান করুন। পেমেন্টের পরে, আমরা আপনার অ্যাকাউন্টে সাবস্ক্রিপশন তৈরি/যোগ করি এবং লগইন বিবরণ সহ WhatsApp এ যোগাযোগ করি।</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">itzmehdude<em>.online</em></a>
+            <p class="en">Bangladesh's most trusted gaming eShop. Safe, fast, and fair gaming top-ups and subscriptions.</p>
+            <p class="bn">বাংলাদেশের সবচেয়ে বিশ্বস্ত গেমিং ইশপ। নিরাপদ, দ্রুত এবং ন্যায্য গেমিং টপ-আপ ও সাবস্ক্রিপশন।</p>
+            <div class="footer-social">
+              <a href="https://facebook.com/itzmehdude" target="_blank" rel="noopener" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://api.whatsapp.com/send/?phone=8801575694241&text=Assalamualaikum+brother" target="_blank" rel="noopener" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="en">Quick Links</h4>
+            <h4 class="bn">দ্রুত লিংক</h4>
+            <div class="footer-links">
+              <a href="index.html" class="en">Home</a>
+              <a href="index.html" class="bn">হোম</a>
+              <a href="shop.html" class="en">Shop</a>
+              <a href="shop.html" class="bn">শপ</a>
+              <a href="contact.html" class="en">Contact</a>
+              <a href="contact.html" class="bn">যোগাযোগ</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="en">Support</h4>
+            <h4 class="bn">সাপোর্ট</h4>
+            <div class="footer-links">
+              <a href="contact.html" class="en">WhatsApp</a>
+              <a href="contact.html" class="bn">হোয়াটসঅ্যাপ</a>
+              <a href="contact.html" class="en">Facebook</a>
+              <a href="contact.html" class="bn">ফেসবুক</a>
+              <a href="#" class="en">Refund Policy</a>
+              <a href="#" class="bn">রিফান্ড নীতি</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="en">&copy; 2026 itzmehdude.online · All rights reserved.</span>
+          <span class="bn">&copy; ২০২৬ itzmehdude.online · সর্বস্বত্ব সংরক্ষিত।</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <div class="float-btns">
+      <a href="https://api.whatsapp.com/send/?phone=8801575694241&text=Assalamualaikum+brother" target="_blank" rel="noopener" class="float-btn float-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://facebook.com/itzmehdude" target="_blank" rel="noopener" class="float-btn float-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <!-- back to top button -->
+      <a href="#top" class="float-btn float-bt"><ion-icon name="triangle"></ion-icon></a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/shared.js"></script>
+  </body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Checkout | itzmehdude.online</title>
+    <meta name="description" content="Place your gaming top-up or subscription order at itzmehdude"/>
+    
+    <!-- Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- CSS Stack (in order: variables → global → layout → checkout) -->
+    <link rel="stylesheet" href="./assets/css/variables.css"/>
+    <link rel="stylesheet" href="./assets/css/global.css"/>
+    <link rel="stylesheet" href="./assets/css/layout.css"/>
+    <link rel="stylesheet" href="./assets/css/pages/checkout.css"/>
+
+  </head>
+  <body id="top">
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announce-bar">
+      <span class="en">Fast delivery · Trusted seller · bKash, Nagad, Upay, Rocket accepted</span>
+      <span class="bn">দ্রুত ডেলিভারি · নির্ভরযোগ্য বিক্রেতা · বিকাশ, নগদ, উপায়, রকেট গ্রহণযোগ্য</span>
+    </div>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="index.html" class="logo">itzmehdude<em>.online</em></a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav" id="mobile-nav">
+          <a href="index.html" class="en">Home</a><a href="index.html" class="bn">হোম</a>
+          <a href="shop.html" class="active en">Shop</a><a href="shop.html" class="active bn">শপ</a>
+          <a href="contact.html" class="en">Contact</a><a href="contact.html" class="bn">যোগাযোগ</a>
+        </nav>
+        <div class="topbar-actions">
+          <div class="lang-toggle">
+            <button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+            <button onclick="setLang('bn')" id="btn-bn">বাং</button>
+          </div>
+
+          <button class="cart-btn" onclick="toggleCart()">
+            🛒 <span class="en">Cart</span><span class="bn">কার্ট</span>
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header-glow"></div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html" class="en">Home</a><a href="index.html" class="bn">হোম</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="shop.html" class="en">Shop</a><a href="shop.html" class="bn">শপ</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="en">Place Order</span><span class="bn">অর্ডার দিন</span>
+        </div>
+        <h1 class="en">Place Your Order</h1><h1 class="bn">আপনার অর্ডার দিন</h1>
+        <p class="en">Fill in your details. Your order will be processed after payment confirmation.</p>
+        <p class="bn">আপনার তথ্য পূরণ করুন। পেমেন্ট নিশ্চিত হওয়ার পরে অর্ডার প্রক্রিয়া করা হবে।</p>
+      </div>
+    </div>
+
+    <!-- ORDER FORM -->
+    <div class="container">
+      <div class="order-layout">
+        <div>
+          <!-- STEP 1: ORDER TYPE -->
+          <div class="form-section">
+            <div class="form-section-title">
+              <div class="form-section-num">1</div>
+              <span class="en">What are you ordering?</span><span class="bn">আপনি কী অর্ডার করছেন?</span>
+            </div>
+            <div class="order-type-options">
+              <div class="order-type-option">
+                <input type="radio" name="order_type" id="ot-game" value="game" checked onchange="toggleOrderType()">
+                <label class="order-type-label" for="ot-game">
+                  <span class="ot-icon">🎮</span>
+                  <span class="ot-title en">Game Top-Up</span>
+                  <span class="ot-title bn">গেম টপ আপ</span>
+                  <span class="ot-desc en">UC, Bonds, Coins</span>
+                  <span class="ot-desc bn">ইউসি, বন্ড, কয়েন</span>
+                </label>
+              </div>
+              <div class="order-type-option">
+                <input type="radio" name="order_type" id="ot-sub" value="subscription" onchange="toggleOrderType()">
+                <label class="order-type-label" for="ot-sub">
+                  <span class="ot-icon">📱</span>
+                  <span class="ot-title en">Subscription</span>
+                  <span class="ot-title bn">সাবস্ক্রিপশন</span>
+                  <span class="ot-desc en">YouTube, ChatGPT, Claude</span>
+                  <span class="ot-desc bn">YouTube, ChatGPT, Claude</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: CUSTOMER INFO -->
+          <div class="form-section">
+            <div class="form-section-title">
+              <div class="form-section-num">2</div>
+              <span class="en">Your Information</span><span class="bn">আপনার তথ্য</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label en">Your Name <span class="req">*</span></label>
+                <label class="form-label bn">আপনার নাম <span class="req">*</span></label>
+                <input type="text" id="cname" class="form-input" placeholder="e.g. Mahmudul Hasan" maxlength="100" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label en">Phone Number <span class="req">*</span></label>
+                <label class="form-label bn">ফোন নম্বর <span class="req">*</span></label>
+                <input type="text" id="cphone" class="form-input" placeholder="e.g. 01575-694241" maxlength="12" pattern="\d{5}-\d{6}" inputmode="numeric" required>
+                <span class="form-hint en">WhatsApp Number Preferable</span>
+                <span class="form-hint bn">আপনার হোয়াটসঅ্যাপ নম্বর দিন</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label en">Facebook Profile Link <span style="color:var(--text3);font-weight:400;">(Optional)</span></label>
+              <label class="form-label bn">ফেসবুক প্রোফাইল লিংক <span style="color:var(--text3);font-weight:400;">(ঐচ্ছিক)</span></label>
+              <input type="url" id="cfb" class="form-input" placeholder="e.g. https://facebook.com/itzmehdude" maxlength="255">
+            </div>
+          </div>
+
+          <!-- STEP 3A: GAME DETAILS -->
+          <div class="form-section cond on" id="game-fields">
+            <div class="form-section-title">
+              <div class="form-section-num">3</div>
+              <span class="en">Account Details</span><span class="bn">অ্যাকাউন্টের তথ্য</span>
+            </div>
+            <div class="note-box">
+              <strong class="en">Important:</strong><strong class="bn">গুরুত্বপূর্ণ:</strong>
+              <span class="en"> Double-check your Player ID / UID. Wrong ID = wrong account. We are not responsible for errors from incorrect IDs.</span>
+              <span class="bn"> Player ID / UID দু'বার চেক করুন। ভুল ID-র কারণে হওয়া ত্রুটির জন্য আমরা দায়ী নই।</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label en">Select Game <span class="req">*</span></label>
+                <label class="form-label bn">গেম বেছে নিন <span class="req">*</span></label>
+                <select id="game-sel" class="form-select" required>
+                  <option value="">-- Select --</option>
+                  <option value="pubgm">PUBG Mobile</option>
+                  <option value="delta">Delta Force</option>
+                  <option value="arena">Arena Breakout</option>
+                  <option value="cod">Call of Duty</option>
+                  <option value="wwm">Where Winds Meet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label en">Player ID / UID <span class="req">*</span></label>
+                <label class="form-label bn">Player ID / UID <span class="req">*</span></label>
+                <input type="number" id="puid" class="form-input" placeholder="e.g. 5320988393" maxlength="10" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label en">Your Email Address <span class="req">*</span></label>
+              <label class="form-label bn">আপনার ইমেইল ঠিকানা <span class="req">*</span></label>
+              <input type="email" id="cemail" class="form-input" placeholder="e.g. example@email.com" maxlength="100" required>
+              <span class="form-hint en">We'll send delivery confirmation here. Required for subscriptions.</span>
+              <span class="form-hint bn">আমরা ডেলিভারি নিশ্চিতকরণ এখানে পাঠাব। সাবস্ক্রিপশনের জন্য প্রয়োজনীয়।</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label en">Item / Package <span class="req">*</span></label>
+              <label class="form-label bn">আইটেম / প্যাকেজ <span class="req">*</span></label>
+              <input type="text" id="gitem" class="form-input" placeholder="Add items to cart first" maxlength="100" readonly required>
+              <span class="form-hint en">Auto-filled from your cart. Cannot be edited manually.</span>
+              <span class="form-hint bn">কার্ট থেকে স্বয়ংক্রিয়ভাবে পূরণ করা হয়। ম্যানুয়ালি সম্পাদনা করা যায় না।</span>
+            </div>
+          </div>
+
+          <!-- STEP 3B: SUBSCRIPTION DETAILS -->
+          <div class="form-section cond" id="sub-fields">
+            <div class="form-section-title">
+              <div class="form-section-num">3</div>
+              <span class="en">Subscription Details</span><span class="bn">সাবস্ক্রিপশনের তথ্য</span>
+            </div>
+            <div class="note-box">
+              <strong class="en">How this works:</strong><strong class="bn">কীভাবে কাজ করে:</strong>
+              <span class="en"> After payment, we purchase the subscription and add it to your account. We will contact you on WhatsApp to coordinate delivery.</span>
+              <span class="bn"> পেমেন্টের পরে, আমরা সাবস্ক্রিপশন কিনে আপনার অ্যাকাউন্টে যোগ করব। ডেলিভারির জন্য WhatsApp-এ যোগাযোগ করব।</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label en">Subscription <span class="req">*</span></label>
+                <label class="form-label bn">সাবস্ক্রিপশন <span class="req">*</span></label>
+                <select id="sub-sel" class="form-select" required>
+                  <option value="">-- Select --</option>
+                  <option value="yt-1m">YouTube Premium - 1 Month (৳339)</option>
+                  <option value="cgpt-go">ChatGPT Go - 1 Month (৳950)</option>
+                  <option value="cgpt-plus">ChatGPT Plus - 1 Month (৳3,600)</option>
+                  <option value="cgpt-pro">ChatGPT Pro - 1 Month (৳30,700)</option>
+                  <option value="claude-pro">Claude Pro - 1 Month (৳3,600 est.)</option>
+                  <option value="claude-max">Claude Max - 1 Month (৳15,700 est.)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label en">Your Account Email <span class="req">*</span></label>
+                <label class="form-label bn">অ্যাকাউন্ট ইমেইল <span class="req">*</span></label>
+                <input type="email" id="sub-email" class="form-input" placeholder="you@email.com" maxlength="254" required>
+                <span class="form-hint en">The account to receive the subscription</span>
+                <span class="form-hint bn">যে অ্যাকাউন্টে সাবস্ক্রিপশন যাবে</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label en">Item / Package <span class="req">*</span></label>
+                <label class="form-label bn">আইটেম / প্যাকেজ <span class="req">*</span></label>
+                <input type="text" id="gitem" class="form-input" placeholder="Add items to cart first" maxlength="100" readonly required>
+                <span class="form-hint en">Auto-filled from your cart. Cannot be edited manually.</span>
+                <span class="form-hint bn">কার্ট থেকে স্বয়ংক্রিয়ভাবে পূরণ করা হয়। ম্যানুয়ালি সম্পাদনা করা যায় না।</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4: PAYMENT METHOD -->
+          <div class="form-section">
+            <div class="form-section-title">
+              <div class="form-section-num">4</div>
+              <span class="en">Payment Method</span><span class="bn">পেমেন্ট পদ্ধতি</span>
+            </div>
+            <p style="font-size:0.88rem;color:var(--text2);margin-bottom:16px;" class="en">Choose how you will send payment. You will receive the exact number after submitting.</p>
+            <p style="font-size:0.88rem;color:var(--text2);margin-bottom:16px;" class="bn">পেমেন্ট পাঠানোর পদ্ধতি বেছে নিন। জমা দেওয়ার পরে সঠিক নম্বর পাবেন।</p>
+            <div class="payment-options">
+              <div class="payment-option">
+                <input type="radio" name="payment" id="pay-bkash" value="bKash" checked required>
+                <label class="payment-option-label" for="pay-bkash">
+                  <img src="./assets/img/payment-bkash.webp" alt="bKash" class="payment-option-icon"> bKash
+                </label>
+              </div>
+              <div class="payment-option">
+                <input type="radio" name="payment" id="pay-nagad" value="Nagad" required>
+                <label class="payment-option-label" for="pay-nagad">
+                  <img src="./assets/img/payment-nagad.webp" alt="Nagad" class="payment-option-icon"> Nagad
+                </label>
+              </div>
+              <div class="payment-option">
+                <input type="radio" name="payment" id="pay-upay" value="Upay" required>
+                <label class="payment-option-label" for="pay-upay">
+                  <img src="./assets/img/payment-upay.webp" alt="Upay" class="payment-option-icon"> Upay
+                </label>
+              </div>
+              <div class="payment-option">
+                <input type="radio" name="payment" id="pay-rocket" value="Rocket" required>
+                <label class="payment-option-label" for="pay-rocket">
+                  <img src="./assets/img/payment-rocket.webp" alt="Rocket" class="payment-option-icon"> Rocket
+                </label>
+              </div>
+            </div>
+            <div class="form-group" style="margin-top:16px;">
+              <label class="form-label en">Transaction ID (TrxID) <span class="req">*</span></label>
+              <label class="form-label bn">লেনদেন ID (TrxID) <span class="req">*</span></label>
+              <input type="text" id="trxid" class="form-input" placeholder="e.g. DCN1EXOFB3" maxlength="10" pattern="[a-zA-Z0-9]*" required>
+              <span class="form-hint en">Please enter your transaction ID (TrxID) correctly.</span>
+              <span class="form-hint bn">আপনার ট্রানজ্যাকশন আইডিটি (TrxID) সঠিকভাবে লিখুন</span>
+            </div>
+            <div class="form-group" style="margin-top:16px;">
+              <label class="form-label en">Additional Notes (Optional)</label>
+              <label class="form-label bn">অতিরিক্ত নোট (ঐচ্ছিক)</label>
+              <textarea id="onotes" class="form-textarea" placeholder="Any special instructions..." maxlength="500"></textarea>
+            </div>
+            <button class="submit-btn" onclick="submitOrder()" type="button">
+              <span class="en">Submit Order →</span><span class="bn">অর্ডার জমা দিন →</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ORDER SUMMARY -->
+        <div class="order-summary">
+          <div class="summary-box">
+            <div class="summary-title en">Order Summary</div>
+            <div class="summary-title bn">অর্ডার সারসংক্ষেপ</div>
+            <div id="summary-items"></div>
+            <div id="summary-totals" style="display:none;">
+              <div class="summary-divider"></div>
+              <div class="summary-row">
+                <span class="lbl en">Subtotal</span><span class="lbl bn">সাবটোটাল</span>
+                <span class="val" id="s-sub">৳0</span>
+              </div>
+              <div class="summary-row grand" style="margin-top:10px;">
+                <span class="lbl en">Total</span><span class="lbl bn">মোট</span>
+                <span class="val" id="s-grand">৳0</span>
+              </div>
+            </div>
+            <div class="trust-chips">
+              <div class="trust-chip">✅ <span class="en">Trusted Seller</span><span class="bn">নির্ভরযোগ্য বিক্রেতা</span></div>
+              <div class="trust-chip">⚡ <span class="en">Avg delivery: ~15 minutes</span><span class="bn">গড় ডেলিভারি: ~১৫ মিনিট</span></div>
+              <div class="trust-chip">🔒 <span class="en">Secure · No scams</span><span class="bn">নিরাপদ · কোনো স্ক্যাম নেই</span></div>
+              <div class="trust-chip">💬 <span class="en">WhatsApp support</span><span class="bn">WhatsApp সাপোর্ট</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div class="modal-overlay" id="success-modal">
+      <div class="modal">
+        <div class="modal-icon">🎉</div>
+        <div class="modal-title en">Order Submitted!</div>
+        <div class="modal-title bn">অর্ডার জমা দেওয়া হয়েছে!</div>
+        <p class="modal-sub en">Your Order ID is below. Send your payment, then share the transaction ID on WhatsApp to confirm.</p>
+        <p class="modal-sub bn">আপনার অর্ডার ID নিচে। পেমেন্ট পাঠান, তারপর WhatsApp-এ ট্রানজেকশন ID শেয়ার করুন।</p>
+        <div class="modal-order-id-container">
+          <div class="modal-order-id" id="modal-oid" onclick="copyOrderID()" style="cursor: pointer;">IMD-000000</div>
+          <button class="modal-copy-btn" onclick="copyOrderID()" title="Click to copy">
+            <i class="fa-solid fa-copy"></i>
+          </button>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-btn modal-btn-primary" onclick="openWhatsApp()">
+            <span class="en">💬 Confirm on WhatsApp</span><span class="bn">💬 WhatsApp-এ নিশ্চিত করুন</span>
+          </button>
+          <button class="modal-btn modal-btn-outline" onclick="window.location.href='contact.html#track-order'">
+            <span class="en">Track Order</span><span class="bn">অর্ডার ট্র্যাক করুন</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">itzmehdude<em>.online</em></a>
+            <p class="en">Bangladesh's most trusted gaming eShop. Safe, fast, and fair gaming top-ups and subscriptions.</p>
+            <p class="bn">বাংলাদেশের সবচেয়ে বিশ্বস্ত গেমিং ইশপ। নিরাপদ, দ্রুত এবং ন্যায্য গেমিং টপ-আপ ও সাবস্ক্রিপশন।</p>
+            <div class="footer-social">
+              <a href="https://facebook.com/itzmehdude" target="_blank" rel="noopener" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://api.whatsapp.com/send/?phone=8801575694241&text=Assalamualaikum+brother" target="_blank" rel="noopener" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="en">Quick Links</h4>
+            <h4 class="bn">দ্রুত লিংক</h4>
+            <div class="footer-links">
+              <a href="index.html" class="en">Home</a>
+              <a href="index.html" class="bn">হোম</a>
+              <a href="shop.html" class="en">Shop</a>
+              <a href="shop.html" class="bn">শপ</a>
+              <a href="contact.html" class="en">Contact</a>
+              <a href="contact.html" class="bn">যোগাযোগ</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="en">Support</h4>
+            <h4 class="bn">সাপোর্ট</h4>
+            <div class="footer-links">
+              <a href="contact.html" class="en">WhatsApp</a>
+              <a href="contact.html" class="bn">হোয়াটসঅ্যাপ</a>
+              <a href="contact.html" class="en">Facebook</a>
+              <a href="contact.html" class="bn">ফেসবুক</a>
+              <a href="#" class="en">Refund Policy</a>
+              <a href="#" class="bn">রিফান্ড নীতি</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="en">&copy; 2026 itzmehdude.online · All rights reserved.</span>
+          <span class="bn">&copy; ২০২৬ itzmehdude.online · সর্বস্বত্ব সংরক্ষিত।</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <div class="float-btns">
+      <a href="https://api.whatsapp.com/send/?phone=8801575694241&text=Assalamualaikum+brother" target="_blank" rel="noopener" class="float-btn float-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://facebook.com/itzmehdude" target="_blank" rel="noopener" class="float-btn float-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <!-- back to top button -->
+      <a href="#top" class="float-btn float-bt"><ion-icon name="triangle"></ion-icon></a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/shared.js"></script>
+    <script src="./assets/js/pages/checkout.js"></script>
+
+  </body>
+</html>
