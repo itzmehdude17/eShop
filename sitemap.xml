@@ -3,46 +3,58 @@
 
   <!-- homepage -->
   <url>
-    <loc>https://itzmehdude.online</loc>
-    <lastmod>2026-02-02</lastmod>
+    <loc>https://itzmehdude.online/</loc>
+    <lastmod>2026-03-25</lastmod>
     <priority>1.00</priority>
   </url>
 
   <!-- static Pages -->
   <url>
     <loc>https://itzmehdude.online/shop</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://itzmehdude.online/contact</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://itzmehdude.online/checkout</loc>
+    <lastmod>2026-03-25</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://itzmehdude.online/legal</loc>
+    <lastmod>2026-03-25</lastmod>
+    <priority>0.50</priority>
   </url>
 
   <!-- error pages -->
   <url>
     <loc>https://itzmehdude.online/401</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <priority>0.70</priority>
   </url>
 
   <url>
     <loc>https://itzmehdude.online/403</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <priority>0.70</priority>
   </url>
 
   <url>
     <loc>https://itzmehdude.online/404</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <priority>0.70</priority>
   </url>
 
   <url>
     <loc>https://itzmehdude.online/500</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <priority>0.70</priority>
   </url>
 

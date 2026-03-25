@@ -1,0 +1,176 @@
+/* LEGAL PAGE STYLES */
+
+/* ── LEGAL CONTENT WRAPPER ──────────────────────────────────────────── */
+.legal-content {
+  max-width: 820px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+/* ── LAST UPDATED ───────────────────────────────────────────────────── */
+.legal-updated {
+  font-size: 0.9rem;
+  color: var(--text2);
+  margin-bottom: 8px;
+}
+
+/* ── INTRO TEXT ──────────────────────────────────────────────────────── */
+.legal-intro {
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+/* ── JUMP-TO NAV ────────────────────────────────────────────────────── */
+.legal-jump {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 48px;
+}
+
+.legal-jump h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text2);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.legal-jump ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.legal-jump a {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity var(--transition);
+}
+
+.legal-jump a:hover {
+  opacity: 0.7;
+}
+
+/* ── SECTION BLOCKS ─────────────────────────────────────────────────── */
+.legal-section {
+  margin-bottom: 56px;
+  scroll-margin-top: 100px;
+}
+
+.legal-section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+
+.legal-section-overview {
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+/* ── SUB-SECTIONS ───────────────────────────────────────────────────── */
+.legal-sub {
+  margin-bottom: 32px;
+}
+
+.legal-sub h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.legal-sub p {
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.legal-sub h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+/* ── LISTS ──────────────────────────────────────────────────────────── */
+.legal-sub ul {
+  list-style: none;
+  margin: 8px 0 12px 0;
+}
+
+.legal-sub ul li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.8;
+}
+
+.legal-sub ul li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* ── POLICY UPDATE & CONTACT FOOTER ─────────────────────────────────── */
+.legal-footer-note {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 48px;
+}
+
+.legal-footer-note h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.legal-footer-note p {
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.legal-footer-note p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-footer-note a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .legal-jump ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .legal-section-title {
+    font-size: 1.3rem;
+  }
+}

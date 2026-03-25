@@ -112,13 +112,15 @@ function buildOrderSummary() {
   
   // Pre-fill items field if game order
   const itemField = document.getElementById('gitem');
-  if (itemField && cart.length) {
+  const subItemField = document.getElementById('sitem');
+  if (cart.length) {
     const itemsList = cart.map(i => `${sanitize(i.name)} x${i.qty}`).join(', ');
-    itemField.value = itemsList;
+    if (itemField) itemField.value = itemsList;
+    if (subItemField) subItemField.value = itemsList;
     console.log('✓ Item field auto-filled:', itemsList);
-  } else if (itemField && !cart.length) {
-    itemField.value = '';
-    itemField.placeholder = 'Cart is empty - add items from shop';
+  } else {
+    if (itemField) { itemField.value = ''; itemField.placeholder = 'Cart is empty - add items from shop'; }
+    if (subItemField) { subItemField.value = ''; subItemField.placeholder = 'Cart is empty - add items from shop'; }
   }
 }
 
@@ -128,18 +130,16 @@ function buildOrderSummary() {
  */
 function updateItemFields() {
   const itemField = document.getElementById('gitem');
-  
-  if (!itemField) return;
+  const subItemField = document.getElementById('sitem');
   
   if (cart.length) {
     const itemsList = cart.map(i => `${sanitize(i.name)} x${i.qty}`).join(', ');
-    itemField.value = itemsList;
-    itemField.placeholder = 'Auto-filled from cart';
+    if (itemField) { itemField.value = itemsList; itemField.placeholder = 'Auto-filled from cart'; }
+    if (subItemField) { subItemField.value = itemsList; subItemField.placeholder = 'Auto-filled from cart'; }
     console.log('✓ Item field updated:', itemsList);
   } else {
-    itemField.value = '';
-    itemField.placeholder = 'Cart is empty - add items from shop';
-    itemField.style.background = 'rgba(255, 100, 100, 0.1)';
+    if (itemField) { itemField.value = ''; itemField.placeholder = 'Cart is empty - add items from shop'; itemField.style.background = 'rgba(255, 100, 100, 0.1)'; }
+    if (subItemField) { subItemField.value = ''; subItemField.placeholder = 'Cart is empty - add items from shop'; subItemField.style.background = 'rgba(255, 100, 100, 0.1)'; }
   }
 }
 
